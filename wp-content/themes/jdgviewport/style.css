@@ -344,8 +344,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 
 #mid {
 	width: 100%;
-	padding-bottom: 10px;
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 #mid.index {
@@ -749,34 +748,10 @@ div.menu li {
 }
 
 
-/* Coda Slider
+/* Slider
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
-/* Most common stuff you'll need to change */
-
-	.coda-slider-wrapper { 
-	direction:ltr; 
-	overflow: hidden;
-	clear: both;
-	width: 940px;
-	margin: 0px auto;
-	padding-top:8px;
-	padding-bottom:6px;
-}
-	.coda-slider { /*background:#a9a9a9;*/ /* put your background color here */ }
-	
-	/* Use this to keep the slider content contained in a box even when JavaScript is disabled */
-	.coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; padding-right: 20px }
-	
-	/* Change the width of the entire slider (without dynamic arrows) */
-	.coda-slider, .coda-slider .panel {width: 940px;} 
-	
-	/* Change margin and width of the slider (with dynamic arrows) */
-	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel {width: 940px;}
-	.coda-slider-wrapper.arrows .coda-slider { margin: 0 0px }
-	
-	/* Arrow styling */
-	.coda-nav-left, .coda-nav-right {
+	#slider-arrow-left, #slider-arrow-right {
 		position:relative;
 		top:200px;
 		height: 1px;
@@ -788,43 +763,5 @@ div.menu li {
 		z-index:100;
 }
 
-	
-	.coda-nav-left a, .coda-nav-right a {
-}
-	.coda-nav-left { float:left;}
-	.coda-nav-right { float:right;}
-	
-	/* Tab nav */
-
-	.coda-nav ul li a {
-	background: transparent url(images/dot_inactive.png) no-repeat 50% 50%;
-}
-
-	.coda-nav ul li a.current {background: transparent url(images/dot_active.png) no-repeat 50% 50%;}
-	
-	/* Panel padding */
-	.coda-slider .panel-wrapper { padding: 0px;}
-	
-	/* Preloader */
-	.coda-slider p.loading { padding: 0px; text-align: center }
-
-/* Don't change anything below here unless you know what you're doing */
-
-	/* Tabbed nav */
-	.coda-nav ul { clear: both; display: block; margin: auto; overflow: hidden }
-	.coda-nav ul li { display: inline }
-	
-	.coda-nav ul li a {
-	background: transparent url(images/dot_inactive.png) no-repeat 50% 50%;
-	float: left;
-	padding-top: 30px;
-	padding-right: 6px;
-	padding-bottom: 3px;
-	padding-left: 6px;
-}
-	
-	/* Miscellaneous */
-	.coda-slider { float: left; overflow: hidden; position: relative }
-	.coda-slider .panel { display: block; float: left }
-	.coda-slider .panel-container { position: relative }
-	
+	#slider-arrow-left { float:left;}
+	#slider-arrow-right { float:right;}

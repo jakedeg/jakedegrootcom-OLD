@@ -1,60 +1,74 @@
 <?php get_header(); ?>
 
-	<div id="mid" class="index">
+
+	<script src=<?php get_template_directory_uri(); ?>"/wp-content/themes/jdgviewport/js/jquery-1.8.2.min.js"></script>
+	<script src=<?php get_template_directory_uri(); ?>"/wp-content/themes/jdgviewport/js/jquery-ui-1.8.20.custom.min.js"></script>
+
+	<script src=<?php get_template_directory_uri(); ?>"/wp-content/themes/jdgviewport/js/jquery.liquid-slider-1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href=<?php get_template_directory_uri(); ?>"/wp-content/themes/jdgviewport/liquid-slider-1.1.css">
+
+    <script>
+    jQuery(function(){
+      jQuery('#ls1').liquidSlider({
+      
+                  autoHeight: false,
+           slideEaseFunction: "easeOutQuint",
+
+                  
+                   autoSlide: true,
+           autoSlideInterval: 8000,
+           autoSlideControls: true,
+       autoSlidePauseOnHover: false,
+       
+               dynamicArrows: true,
+      dynamicArrowsGraphical: true,
+        dynamicArrowLeftText: "&#171; left",
+       dynamicArrowRightText: "right &#187;",
+              hideSideArrows: true,
+      hideSideArrowsDuration: 750,
+                 hoverArrows: false,
+          hoverArrowDuration: 250,
+       
+                 dynamicTabs: true,
+            dynamicTabsAlign: "center",
+         dynamicTabsPosition: "bottom",
+          panelTitleSelector: "h2.title",
+                  crossLinks: true,
+                     
+          keyboardNavigation: true,
+
+        hideArrowsWhenMobile: false,   
+      
+          });
+      
+    });
     
-    <div class="coda-nav-left" id="coda-nav-left-1"><a href="#" title="Slide left"><img src="<?php bloginfo('template_directory'); ?>/images/left.png" alt="Left" /></a></div>
-	<div class="coda-nav-right" id="coda-nav-right-1"><a href="#" title="Slide right"><img src="<?php bloginfo('template_directory'); ?>/images/right.png" alt="Right" /></a></div>
+    </script>  
 
-		<!-- Start slider -->
-		<div class="coda-slider-wrapper">
+<div id="mid" class="index">
 
-			<div class="coda-slider preload" id="coda-slider-1">
+<!-- Liquid Slider Panels -->
+      <div class="liquid-slider"  id="ls1">
 			<?php query_posts(array('orderby' => 'rand', 'category_name' => featured, 'showposts' => 5)); if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 				<div class="panel" id="post-<?php the_ID(); ?>" title="<?php the_title() ?>">
+				<h2 class="title"></h2>
 					<a href="<?php the_permalink() ?>" rel="bookmark" title="Click to view <?php the_title_attribute(); ?>">
-                    <div class="panel-wrapper">
-							   <?php
+							<?php
 							$media_type = get_post_meta($post->ID, 'lead_type', true); 
 							$media = get_post_meta($post->ID, 'lead_image', true);
 							?>
-								<img src="<?php echo $media; ?>" alt="" width="940" height="600" />
-						
-						<div class="post-title">
-							<?php the_title(); ?>
-						</div>
-						<div class="entry">
-							<?php the_excerpt(); ?>
-						</div> <!-- .entry -->
-					</div><!-- .panel-wrapper -->
+							<img src="<?php echo $media; ?>" alt="" width="940" height="600" />
+							<div class="post-title"> <?php the_title(); ?> </div> <!-- .post-title -->
+							<div class="entry"> <?php the_excerpt(); ?> </div> <!-- .entry -->
                     </a>
 				</div><!-- .panel -->
 				
 				<?php endwhile; ?>
-	
 			<?php else : ?>
-		
 			<?php endif; ?>
-	
-			</div><!-- .coda-slider preload -->    
-    	</div><!--.coda-slider-wrapper -->
-        
-                                <script type="text/javascript"> 
-        jQuery(document).ready(function($){
-                                $().ready(function() {
-                                        $('#coda-slider-1').codaSlider({
-											autoSlide:true,
-											autoSlideInterval: 8000,
-											autoSlideStopWhenClicked: true,
-											dynamicArrows: false,
-											dynamicTabs: true,
-											dynamicTabsPosition: "bottom",
-											});
-                                });
-        });
-                        </script> 
-                        
-                        
+			
+      </div>  <!-- .liquid-slider -->                        
 
 	</div><!-- .mid -->	
 
