@@ -3,108 +3,11 @@
  * Plugin Name: Social Profiles Sidebar Widget
  * Plugin URI: http://blog.ppfeufer.de/wordpress-plugin-social-profiles-sidebar-widget/
  * Description: Add a sidebarwidget for social profiles in your blog. Supports several sets of icons and different iconsizes.
- * Version: 1.6.1
+ * Version: 1.7.1
  * Author: H.-Peter Pfeufer
  * Author URI: http://ppfeufer.de
  */
-
-/**
- * Changelog
- * = 1.6.1 (15.07.2011) =
- * Edit: Deleted double icons.
- *
- * = 1.6.0 (15.07.2011) =
- * Add: Google+ to bohncore iconsets (thanks to <a href="http://www.bohncore.de/">Ralf Bohnert</a>)
- * Test: Ready for WordPress 3.2, tested on WordPress 3.3-aortic-dissection.
- *
- * = 1.5.0 (30.03.2011) =
- * Add: profiles via drag and drop sortable (thanks to <a href="http://sharjes.de/">Simon</a>).
- *
- * = 1.4.0 (24.03.2011) =
- * BUMP
- *
- * = 1.3.9 (24.03.2011) =
- * Fix: Little bug in updating the settings.
- *
- * = 1.3.8 (24.03.2011) =
- * Add: Function to order the icons for your needs. Just give them a positionnumber in widget-settings. Please check your settings after this update.
- *
- * = 1.3.7 (23.02.2011) =
- * Add: New icons in "Crumpled Paper Social Media Logos"
- *
- * = 1.3.6 (09.02.2011) =
- * Fix: hide widget-titlebar if its empty.
- *
- * = 1.3.5 (16.01.2011) =
- * Fix: Profile links no longer get lost while changing the iconset (thanks to <a href="http://blog.dunkelwesen.de">Andi</a> for reporting).
- *
- * = 1.3.4 (09.01.2011) =
- * Fix: corrected loading of JavaScript after saving action.
- *
- * = 1.3.3 (08.01.2011) =
- * Update: JavaScript
- *
- * = 1.3.2 (03.01.2011) =
- * Fix: fixed iconpath for some setups, e.g. WPMU (thanks again to Daniel for reporting)
- *
- * = 1.3.1 (03.01.2011) =
- * Fix: minor bugfix in translation (thanks to Daniel for reporting)
- *
- * = 1.3.0 (11.12.2010) =
- * Add: Function for additional iconsets
- * Update: German translation
- *
- * = 1.2.0 (08.12.2010) =
- * Add: Support for 16px Icons (will be shown in a list among each other with a link beside).
- * Add: Social Media Icon-Set (16px only) by <a href="http://www.bohncore.de/2010/12/07/freebie-16px-social-media-icon-set-by-bohncore/">Ralf Bohnert</a>
- * Update: German translation
- *
- * = 1.1.4 (07.12.2010) =
- * Replace: Deprecated function bloginfo('home') with home_url()
- *
- * = 1.1.3 (28.11.2010) =
- * Add: icons for xing and skype in "DyIcon Socialize Icon Set"
- * Add: Option for iconposition (left, center, right)
- * Add: Option for linktarget
- * Add: Option for rel="nofollow"
- * Fix: a bug in icondetection and saving links
- * Test: ready WordPress 3.1 (testet in WordPress 3.1-beta1)
- * Update: german translation
- *
- * = 1.1.2 (25.11.2010) =
- * Added clearfix for older Themes
- *
- * = 1.1.1 (25.11.2010) =
- * Deleted some directorys
- *
- * = 1.1.0 (25.11.2010) =
- * Added JavaScript to detect width of sidebar and center iconblock. (Looks better now, thanks to Simon).
- * Added JavaScript to show changes in select immediatly (Thanks again to Simon)
- * Added german translation.
- * Added function to check if profile-icon exists (Not every Iconset supports the same or all profiles).
- * Added new iconset "Crumpled Paper Social Media Logos"
- * Added new iconset "DyIcon Socialize Icon Set" by DryIcon
- *
- * = 1.0.3 (24.11.2010) =
- * Corrected misspelling for linkedin-image.
- *
- * = 1.0.2 (24.11.2010) =
- * Updated plugindescription in readme.txt.
- *
- * = 1.0.1 (24.11.2010) =
- * Corrected a little XML-Setting.
- *
- * = 1.0.0 (24.11.2010) =
- * Initial Release.
- * Added javascript for selecting iconsets.
- * Added function to read XML-data from iconsets.
- * *
- */
-
-if(!defined('PPFEUFER_FLATTRSCRIPT')) {
-	define('PPFEUFER_FLATTRSCRIPT', 'http://cdn.ppfeufer.de/js/flattr/flattr.js');
-}
-define('SOCIALPROFILESSIDEBARWIDGETVERSION', '1.6.1');
+define('SOCIALPROFILESSIDEBARWIDGETVERSION', '1.7.1');
 
 class Social_Profiles_Sidebar extends WP_Widget {
 	/**
@@ -410,14 +313,7 @@ class Social_Profiles_Sidebar extends WP_Widget {
 			// Flattr
 			echo '<p style="clear:both;"></p>';
 			echo '<p style="border-bottom: 1px solid #DFDFDF;"><strong>' . __('Like this Plugin? Support the developer.', 'social-profiles-sidebar-widget') . '</strong></p>';
-			/**
-			 * JavaScript für Flattr einfügen
-			 */
-			if(!defined('PPFEUFER_FLATTRSCRIPT_IS_LOADED')) {
-				echo '<script type="text/javascript" src="' . PPFEUFER_FLATTRSCRIPT . '"></script>';
-				define('PPFEUFER_FLATTRSCRIPT_IS_LOADED', true);
-			}
-			echo '<p><a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://blog.ppfeufer.de/wordpress-plugin-social-profiles-sidebar-widget/"></a></p>';
+			echo '<p><a href="http://flattr.com/thing/87594/WordPress-Plugin-Social-Profiles-Sidebar-Widget" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>';
 
 			echo '<div id="selected-iconset-data">';
 			echo '</div>';
@@ -606,6 +502,25 @@ class Social_Profiles_Sidebar extends WP_Widget {
 
 			echo '</ul>';
 		} else {
+			if($args['iconposition'] == 'center') {
+				echo '<script type="text/javascript">' . "\n";
+				echo '/* <![CDATA[ */' . "\n";
+				echo 'function centerSocialProfilesWidgets() {' . "\n";
+				echo '	centerSocialProfilesWidgets = function () {};' . "\n";
+				echo '	var wrapperDiv = document.getElementById(\'social-profiles-widget-wrapper\');' . "\n";
+				echo '	var sidebarLi = wrapperDiv.parentNode;' . "\n";
+				echo '	var liWidth = sidebarLi.clientWidth;' . "\n";
+				echo '	var icon = sidebarLi.getElementsByTagName(\'span\')[0];' . "\n";
+				echo '	if (icon) {' . "\n";
+				echo '		var iconWidth = icon.clientWidth;' . "\n";
+				echo '		var padding = Math.floor((liWidth % iconWidth) / 2);' . "\n";
+				echo '		wrapperDiv.style.paddingLeft = padding + \'px\';' . "\n";
+				echo '	}' . "\n";
+				echo '}' . "\n";
+				echo '/* ]]> */' . "\n";
+				echo '</script>' . "\n";
+			}
+
 			echo '<div id="social-profiles-widget-wrapper" style="margin-top:10px;' . $var_sAlign . '">';
 
 			if($args['selected_iconset'] == 'none' || $args['iconsize'] == 'none') {
@@ -634,24 +549,6 @@ class Social_Profiles_Sidebar extends WP_Widget {
 
 			echo '</div>';
 
-			if($args['iconposition'] == 'center') {
-				echo '<script type="text/javascript">' . "\n";
-				echo '/* <![CDATA[ */' . "\n";
-				echo 'function centerSocialProfilesWidgets() {' . "\n";
-				echo '	centerSocialProfilesWidgets = function () {};' . "\n";
-				echo '	var wrapperDiv = document.getElementById(\'social-profiles-widget-wrapper\');' . "\n";
-				echo '	var sidebarLi = wrapperDiv.parentNode;' . "\n";
-				echo '	var liWidth = sidebarLi.clientWidth;' . "\n";
-				echo '	var icon = sidebarLi.getElementsByTagName(\'span\')[0];' . "\n";
-				echo '	if (icon) {' . "\n";
-				echo '		var iconWidth = icon.clientWidth;' . "\n";
-				echo '		var padding = Math.floor((liWidth % iconWidth) / 2);' . "\n";
-				echo '		wrapperDiv.style.paddingLeft = padding + \'px\';' . "\n";
-				echo '	}' . "\n";
-				echo '}' . "\n";
-				echo '/* ]]> */' . "\n";
-				echo '</script>' . "\n";
-			}
 
 			echo '<div style="clear: both;"></div>';
 		}
@@ -726,4 +623,80 @@ class Social_Profiles_Sidebar extends WP_Widget {
 }
 
 add_action('widgets_init', create_function('', 'return register_widget("Social_Profiles_Sidebar");'));
+
+/**
+ * Changelog bei Pluginupdate ausgeben.
+ *
+ * @since 1.6.3
+ */
+if(!function_exists('social_profiles_sidebar_widget_update_notice')) {
+	function social_profiles_sidebar_widget_update_notice() {
+		$url = 'http://plugins.trac.wordpress.org/browser/social-profiles-sidebar-widget/trunk/readme.txt?format=txt';
+		$data = '';
+
+		if(ini_get('allow_url_fopen')) {
+			$data = file_get_contents($url);
+		} else {
+			if(function_exists('curl_init')) {
+				$ch = curl_init();
+				curl_setopt($ch, CURLOPT_URL, $url);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+				$data = curl_exec($ch);
+				curl_close($ch);
+			} // END if(function_exists('curl_init'))
+		} // END if(ini_get('allow_url_fopen'))
+
+
+		if($data) {
+			$matches = null;
+			$regexp = '~==\s*Changelog\s*==\s*=\s*[0-9.]+\s*=(.*)(=\s*' . preg_quote(SOCIALPROFILESSIDEBARWIDGETVERSION) . '\s*=|$)~Uis';
+
+			if(preg_match($regexp, $data, $matches)) {
+				$changelog = (array) preg_split('~[\r\n]+~', trim($matches[1]));
+
+				echo '</div><div class="update-message" style="font-weight: normal;"><strong>What\'s new:</strong>';
+				$ul = false;
+				$version = 99;
+
+				foreach($changelog as $index => $line) {
+					if(version_compare($version, SOCIALPROFILESSIDEBARWIDGETVERSION, ">")) {
+						if(preg_match('~^\s*\*\s*~', $line)) {
+							if(!$ul) {
+								echo '<ul style="list-style: disc; margin-left: 20px;">';
+								$ul = true;
+							} // END if(!$ul)
+
+
+							$line = preg_replace('~^\s*\*\s*~', '', $line);
+							echo '<li>' . $line . '</li>';
+						} else {
+							if($ul) {
+								echo '</ul>';
+								$ul = false;
+							} // END if($ul)
+
+
+							$version = trim($line, " =");
+							echo '<p style="margin: 5px 0;">' . htmlspecialchars($line) . '</p>';
+						} // END if(preg_match('~^\s*\*\s*~', $line))
+					} // END if(version_compare($version, SOCIALPROFILESSIDEBARWIDGETVERSION,">"))
+				} // END foreach($changelog as $index => $line)
+
+
+				if($ul) {
+					echo '</ul><div style="clear: left;"></div>';
+				} // END if($ul)
+
+
+				echo '</div>';
+			} // END if(preg_match($regexp, $data, $matches))
+		} // END if($data)
+	} // END function social_profiles_sidebar_widget_update_notice()
+} // END if(!function_exists('social_profiles_sidebar_widget_update_notice'))
+
+if(is_admin()) {
+	if(ini_get('allow_url_fopen') || function_exists('curl_init')) {
+		add_action('in_plugin_update_message-' . plugin_basename(__FILE__), 'social_profiles_sidebar_widget_update_notice');
+	}
+}
 ?>

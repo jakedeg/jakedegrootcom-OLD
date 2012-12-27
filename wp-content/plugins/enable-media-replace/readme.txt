@@ -2,7 +2,7 @@
 Contributors: mungobbq
 Tags: admin, attachment, media, files
 Requires at least: 2.8
-Tested up to: 3.2.1
+Tested up to: 3.5
 Stable tag: trunk
 
 Enables replacing attachment files by simply uploading a new file in the media library edit view.
@@ -37,6 +37,20 @@ If you want more control over the format used to display the time, you can use t
 
 == Changelog ==
 
+= 2.8 =
+* New and safer method for deleting thumbnails when a new image file is uploaded. 
+* New translations for simplified Chinese (thanks Tunghsiao Liu) and Italian (grazie Marco Chiesi)
+* Added method for detecting upload screen to ensure backwards compatibility with versions pre 3.5
+
+= 2.7 =
+* A couple of changes made to ensure compatibility with WordPress 3.5. Thanks to Elizabeth Powell for the fixes!
+
+= 2.6 =
+* New and improved validation of uploaded files, now using WP's own functions for checking file type and extension. Thanks again to my old friend Ulf "Årsta" Härnhammar for keeping us all on our toes! :) This should also hopefully fix the problems people have been having with their installations claiming that perfectly good PDF files are not allowed file types.
+
+= 2.5.2 =
+* The "more reliable way" of determining MIME types turned out to be less reliable. Go figure. There seems to be no perfect way of performing a reliable check for MIME-types on an uploaded file that is also truly portable. I have now made checks for the availability of mime_content_type() before using it, using the old method as a fall-back. It is far from beautiful, so if anybody has a better way of doing it, please contact me!
+
 = 2.5.1 =
 * Bug fix - there is now a more reliable way of determining file type on your upload so you can upload PDF files without seeing that pesky "File type does not meet security guidelines" message. 
 * New translation to Danish - thanks to Michael Bering Petersen!
@@ -44,7 +58,7 @@ If you want more control over the format used to display the time, you can use t
 = 2.5 =
 * Tested with WordPress 3.2.1
 * New translation to German - thanks to Martin Lettner!
-* New translation to French - thanks to Fran�ois Collette!	
+* New translation to French - thanks to François Collette!	
 
 = 2.4.1 =
 * Bug fix for WordPress 3.1 RC. Now properly tested and should be working with 3.1 whenever it finally comes out. :)
@@ -81,7 +95,7 @@ If you want more control over the format used to display the time, you can use t
 * Added support for wp_config setting "FORCE_SSL_ADMIN"
 
 = 1.2 =
-* Added Russian translation, thanks to [Fat Cower](http://www.fatcow.com)
+* Added Russian translation, thanks to Fat Cower.
 
 = 1.1 =
 * Minor bugfix, now working with IE8 too!

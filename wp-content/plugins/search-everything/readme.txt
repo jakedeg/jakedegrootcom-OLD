@@ -2,9 +2,9 @@
 Contributors: dancameron, sproutventure
 Donate link: http://bit.ly/plugin-donations
 Tags: search, search highlight, tag search, category search, category exclusion, comment search, page search, admin, seo, post filter
-Requires at least: 2.1
-Tested up to: 2.9.3
-Stable tag: 6.6
+Requires at least: 3
+Tested up to: 3.4
+Stable tag: 6.9.4.1
 
 Increases Wordpress' default search functionality in three easy steps.
 
@@ -37,52 +37,6 @@ Search Everything increases the ability of the default Wordpress Search, options
 * Exclude Posts from search
 * Exclude Categories from search
 
-
-Updates:
-* 6.6 - WP 3.0 compat. fix. Language updates.
-* 6.5.1 - Language updates.
-* 6.5 - Highlighting fix. Better Tag search and Taxonomy search
-* 6.4 - Fixing comment search conflict with author searches.
-* 6.3.1 - Major bug fix. Necessary upgrade for 6.3.
-
-
-== Update Log ==
-
-* 6.5 - highlight regex update, props eric. Added taxonomy support, props leewillis.
-* 6.4.1 - Logging bug fix.
-* 6.4 - Fixing comment search conflict with author searches ( temporarily disabling author search ). More languages
-* 6.3 - 2.8 issue for terms and categories (Search every category name and description issue). Highlight fixes. Language Updates: Romanian, Japan, Arabic, Norwegian (Nynorsk)
-* 6.2.5 - Bug fixed specifically for WordPress 2.8. More Translations.
-* 6.2.2   - Post Exclusion fix. More translations.
-* 6.2.1   - Changed highlight from span to div.
-* 6.2   - Search Highlighting options. Fix when searching with '.
-* 6.1.7 - Major Posts Exclude and Category Exclude Bug fix.
-* 6.1.6 - Sym link fix.
-* 6.1.5 - Major Exclude Bug fix.
-* 6.1.3 - Exclusion Bug Fix.
-* 6.1.2 - Localization bug fixes.
-* 6.1.1 - Fixed bug when search comments is selected and localization update.
-* 6.1 - New search comment author selection, Misc. bug fixes from v.6 release and updated Localization support.
-* 6 - New Options Panel!!, Multi-Word fix! #44, Exclude Bug Fix, Admin search fix.
-* 5 - Bug Release, Extend Author Search to comments (props to Joshua Bettigole), Tag Fix, Meta Fix
-* 4.7.7 - New conditions to fix plugin from breaking with certain option selections. props Matias Gertel
-* 4.7.6.2 - Bug fix, some people returning no results. Matching release number with WP version.
-* 4.7.5 - Post Revision Update for Wordpress 2.6 (necessary update for 2.6 users), removed future posts from results
-* 4.7.1 - Swedish, Spanish and Dutch
-* 4.7 - Wordpress 2.6 updates and more
-* 4.6.2 - REQUIRED UPDATE from 4.6 release. Admin panel bug fixes (proper wp_version checks, disabled draft support for 2.5 and fixed the options from not updating); Russian and Italian language support.
-* 4.6 - Admin refresh and Excerpt Fix
-* 4.5 - Japanese Language Support, Category Fix for Wordpress 2.5, Tag search fix (name) other minors
-* 4.2.2 - Localization PO and MO updates, German Translation
-* 4.2 - Full 2.3 Support with Tag Searching and Category Exclusion.  Major Performance tweaks for searching tags and comments (4.2.1).
-* 4.1 - Major Plugin Architecture change, better localization support
-* 4.0.3 - Localization pot and Turkish translation (props Baris Unver)
-* 4.0.2 - CSS Bug fix - minor
-* 4.0.1 - Bug fix~Extraneous 's' in options panel
-* 4.0.0 - Wordpress 2.3 Support, Password protected pages option, Overhaul of Admin area
-
-[SVN Browser](https://core.sproutventure.com/repositories/show/search-everything "Project Home and SVN Browser")
-
 == Installation ==
 
 Installation Instructions:
@@ -100,9 +54,13 @@ Installation Instructions:
 
 Read the installation guide.
 
-= It *still* doesn't work =
+= Where is feature x? =
 
-[Support Forums and Project Center](https://core.sproutventure.com/projects/show/search-everything "Support Forums and Project Center")
+[github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues"). Label it as a "feature-request"
+
+= It *still* doesn't work (and you're certain there's a bug) =
+
+[github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues")
 
 = What Translations are included? =
 
@@ -132,10 +90,8 @@ Read the installation guide.
 
 == Help ==
 
-I do need help with this plugin. If you can possibly do my day job and take my girls and newborn son to the park I would appreciate it; otherwise contribute your fixes and suggestions to me in the forums or through the contact form on my site.
-
+Send me your pull requests on [github](https://github.com/sproutventure/search-everything-wordpress-plugin "github")
 
 == Support ==
 
-[Support Forums and Project Center](https://core.sproutventure.com/projects/show/search-everything "Support Forums and Project Center")
-
+[github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues")

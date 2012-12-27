@@ -2,9 +2,9 @@
 Contributors: ppfeufer
 Donate link:
 Tags: Socialmedia, Delicious, Facebook, Flickr, Google, Linkarena, Linkedin, RSS, Technorati, Twitter, Wikio, Wong, Xing, Yahoo, Yigg, Youtube
-Requires at least: 3.0.1
-Tested up to: 3.2
-Stable tag: 1.6.1
+Requires at least: 3.1
+Tested up to: 3.4
+Stable tag: 1.7.1
 
 Add a sidebarwidget for social profiles in you blog. Supports several sets of icons and three different iconsizes. 32, 64, and 128 Pixel.
 
@@ -43,6 +43,22 @@ You can use the built in installer and upgrader, or you can install the plugin m
 2. Sidebarwidget in frontend
 
 == Changelog ==
+
+= 1.7.1 =
+* (28.03.2012)
+* Fix: wrong function call
+
+= 1.7 =
+* (28.03.2012)
+* Ready for WordPress 3.4
+
+* = 1.6.3 =
+* (10.11.2011)
+* Fix: JavaScript-Error.
+
+= 1.6.2 =
+* (09.11.2011)
+* Ready for WordPress 3.3
 
 = 1.6.1 =
 * (15.07.2011)

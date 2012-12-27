@@ -184,7 +184,7 @@ $(function(){
 	var plugin_path = Plugin_Url.plugin_url;
 	$("body").removeClass("coda-slider-no-js");
 	// Preloader
-	$(".coda-slider").children('.panel').hide().end().prepend('<p class="loading">Loading...<br /><img src="'+ plugin_path +'/ajax-loader.gif" alt="loading..." /></p>');
+	$(".coda-slider").children('.panel').hide().end().prepend('<p class="loading">Loading...<br /><img src="'+ plugin_path +'/wp-coda-slider/images/ajax-loader.gif" alt="loading..." /></p>');
 });
 });
 var sliderCount = 1;

@@ -1,15 +1,15 @@
 === WP Mailto Links ===
 Contributors: freelancephp
-Tags: hide, email, emailaddress, mailto, link, encode, encrypt, obfuscate, email icon, javascript
+Tags: hide, email, emailaddress, mailto, link, antispam, protect, spambot, encode, encrypt, obfuscate, email icon, javascript
 Requires at least: 2.7.0
-Tested up to: 3.1.3
-Stable tag: 0.22
+Tested up to: 3.3.2
+Stable tag: 0.30
 
-Manage mailto links on your site and protect emails from spambots, set mail icon and more.
+Protect emailaddresses and manage mailto links on your site, set mail icon and styling.
 
 == Description ==
 
-Manage mailto links and protect all emailaddresses on your site.
+Protect emailaddresses and manage mailto links on your site.
 
 = Features =
 * Protect mailto links
@@ -23,6 +23,7 @@ This plugin combines the best email protection methods explained in [this articl
 Supports PHP4.3+ and up to latest WP version.
 
 == Installation ==
+
 1. Go to `Plugins` in the Admin menu
 1. Click on the button `Add new`
 1. Search for `WP Mailto Links` and click 'Install Now' or click on the `upload` link to upload `wp-mailto-links.zip`
@@ -41,6 +42,19 @@ Supports PHP4.3+ and up to latest WP version.
 * Title icon on Admin Options Page was made by [Aha-Soft Team](http://www.aha-soft.com/) taken form [iconfinder](http://findicons.com/icon/219920/e_mail)
 
 == Changelog ==
+
+= 0.30 =
+* Improved regular expressions
+* Fixed keep lettercase in mailto params
+* Fixed convert plain emails without dot on the end
+* Replaced code from pre_get_posts to wp action
+
+= 0.24 =
+* Fixed IE layout problem (WP 3.3+)
+
+= 0.23 =
+* Fixed blank page bug (WP 3.2+)
+* Fixed setting default option values
 
 = 0.22 =
 * Added support for widget_content filter of the Logic Widget plugin
@@ -64,9 +78,17 @@ Supports PHP4.3+ and up to latest WP version.
 = 0.10 =
 * First release, features: protect mailto links and plain emails , set link icon, set no-icon class and additional classes
 
-== Other notes ==
-
 == Upgrade Notice ==
+
+= 0.30 =
+* Improved regular expressions
+* Fixed keep lettercase in mail params
+
+= 0.24 =
+* Fixed IE layout problem (WP 3.3+)
+
+= 0.23 =
+Fixed blank page bug for WP 3.2+
 
 = 0.21 =
 Fixed some essential bugs

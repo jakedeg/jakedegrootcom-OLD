@@ -2,14 +2,14 @@
 Contributors: simpleviewer
 Tags: SimpleViewer, photos, photo, images, image, posts, post, pages, page, plugin, gallery, galleries, flash, media
 Requires at least: 2.8
-Tested up to: 3.0.1
-Stable tag: 2.1.3
+Tested up to: 3.4.2
+Stable tag: 2.3.2
 
 Allows you to easily create SimpleViewer galleries with WordPress.
 
 == Description ==
 
-The WP-SimpleViewer plugin allows you to easily create [SimpleViewer](http://www.simpleviewer.net/simpleviewer) galleries with WordPress. Images and captions can be loaded from the WordPress Media Library or from Flickr. SimpleViewer is a free, customizable Flash image gallery. It allows you to display your images on any web page in a professional, intuitive and simple way. 
+The WP-SimpleViewer plugin allows you to easily create [SimpleViewer](http://www.simpleviewer.net/simpleviewer/) galleries with WordPress. SimpleViewer is a free, customizable Flash image gallery. Images and captions can be loaded from the WordPress Media Library or from Flickr.
 
 Get full instructions and support at the [WP-SimpleViewer Homepage](http://www.simpleviewer.net/simpleviewer/support/wp-simpleviewer/).
 
@@ -32,20 +32,40 @@ Before installing, please confirm your web server meets the following requiremen
 * PHP DOM extension is enabled (this is the default, however some web hosts may disable this extension).
 * Active theme must call the [wp_head](http://codex.wordpress.org/Plugin_API/Action_Reference/wp_head) function in it's header.php file.
 
-= Compatibility =
+= Upgrading from v1.5.4 =
 
-WP-SimpleViewer is not compatible with the following WP plugins. Please disable these plugins when using WP-SimpleViewer:
-
-* [Fluency Admin](http://deanjrobinson.com/projects/fluency-admin/)
-* [WP-Minify](http://wordpress.org/extend/plugins/wp-minify/)
-* [jQuery ColorBox](http://wordpress.org/extend/plugins/jquery-colorbox/)
-* [jQuery Lightbox](http://wordpress.org/extend/plugins/jquery-lightbox-balupton-edition/)
-
-= Upgrading from v1.5.4 = 
-
-Please note that upgrading to the new plugin will cause galleries created with the old plugin not to display. [Check here for the solution](http://www.simpleviewer.net/simpleviewer/support/wp-simpleviewer/#v1). 
+Please note that upgrading to the new plugin will cause galleries created with the old plugin not to display. [Check here for the solution](http://www.simpleviewer.net/simpleviewer/support/wp-simpleviewer/#v1).
 
 == Changelog ==
+
+= 2.3.2 =
+* Supports SimpleViewer v2.3.1
+* Added support for 'Picasa Web Album' as source of images
+* Added support for WordPress installations on https:// secure servers
+* XML file now created dynamically so no need to edit gallery or post to rebuild static XML file
+* Made distinction between pages and posts throughout plugin
+* Fixed bug allowing multiple gallery shortcodes to be entered into each post
+* Fixed bug whereby duplicate calls were made to certain methods
+* Fixed bug whereby corrupt NextGEN Gallery installation caused NextGEN-sourced gallery to fail
+
+= 2.3.1 =
+* Added support for NextGEN galleries as source of images
+* Added ability to delete all galleries and reset Gallery Id to zero
+* Added ability to set/reset default values for gallery options
+* Improved and restructured code
+* Removed redundant code
+* Fixed incompatibilities with other plugins
+* Multiple bug fixes and enhancements
+
+= 2.3.0 =
+* Fixed missing 'Add SimpleViewer Gallery' text button
+* Fixed debug mode warnings
+* Supports SimpleViewer v2.3.0
+
+= 2.2.0 =
+* Fixed Gallery Sizing Issues
+* Fixed Multiple Flickr Tags
+* Multiple bug fixes and enhancements
 
 = 2.1.3 =
 * Fixed Gallery Sizing Issues
@@ -54,17 +74,17 @@ Please note that upgrading to the new plugin will cause galleries created with t
 * Multiple bug fixes and enhancements
 
 = 2.1.2 =
-* Added Universal Playback.
-* Supports SimpleViewer v2.1.2.
-* Multiple bug-fixes.
+* Added Universal Playback
+* Supports SimpleViewer v2.1.2
+* Multiple bug-fixes
 
 = 2.0.5 =
-* Added ability to delete galleries.
-* Fixed extra quotes in Pro options.
+* Added ability to delete galleries
+* Fixed extra quotes in Pro options
 
 = 2.0.4 =
 * Supports SimpleViewer v2.0
-* Supports loading images from the WordPress Media Library or via Flickr.
+* Supports loading images from the WordPress Media Library or via Flickr
 * Compatible with WP 3.0
 
 == Upgrade to SimpleViewer-Pro ==

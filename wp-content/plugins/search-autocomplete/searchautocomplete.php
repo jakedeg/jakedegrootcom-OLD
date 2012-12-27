@@ -11,8 +11,8 @@ function add_search_js() {
 	if (!is_admin()) {
 		wp_register_style('autocompletestyles', WP_PLUGIN_URL.'/search-autocomplete/css/'.get_option('autocomplete_theme').'/jquery-ui-1.8.9.custom.css');
 		wp_enqueue_style('autocompletestyles');
-		wp_register_script('autocompletejquery', WP_PLUGIN_URL.'/search-autocomplete/includes/jquery-ui-1.8.9.custom.min.js', array('jquery'), '1.0.0');
-		wp_enqueue_script('autocompletejquery');
+		wp_enqueue_script('jquery-ui-core');
+
 		wp_register_script('autocompletescripts', WP_PLUGIN_URL.'/search-autocomplete/autocomplete-scripts.php', array('jquery'), '1.0.0');
 		wp_enqueue_script('autocompletescripts');
 	}
