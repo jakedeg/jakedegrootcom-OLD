@@ -3,24 +3,57 @@
 <?php global $query_string; ?>
 <?php query_posts( $query_string . '&cat=-23' ); ?>
 
+	<script src=<?php get_template_directory_uri(); ?>"/wp-content/themes/jdgviewport/js/jquery-1.8.2.min.js"></script>
+	<script src=<?php get_template_directory_uri(); ?>"/wp-content/themes/jdgviewport/js/jquery-ui-1.8.20.custom.min.js"></script>
 
+	<script src=<?php get_template_directory_uri(); ?>"/wp-content/themes/jdgviewport/js/jquery.liquid-slider-1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href=<?php get_template_directory_uri(); ?>"/wp-content/themes/jdgviewport/liquid-slider-1.1.css">
+
+    <script>
+    jQuery(function(){
+      jQuery('#ls2').liquidSlider({
+      
+                  autoHeight: true,
+           slideEaseFunction: "easeOutQuint",
+
+
+                  continuous: false,
+
+               dynamicArrows: true,
+      dynamicArrowsGraphical: true,
+        dynamicArrowLeftText: "&#171; left",
+       dynamicArrowRightText: "right &#187;",
+              hideSideArrows: true,
+      hideSideArrowsDuration: 750,
+                 hoverArrows: false,
+          hoverArrowDuration: 250,
+
+       
+                 dynamicTabs: true,
+            dynamicTabsAlign: "center",
+         dynamicTabsPosition: "bottom",
+          panelTitleSelector: "h2.title",
+                  crossLinks: true,
+                     
+          keyboardNavigation: true,
+
+        hideArrowsWhenMobile: false,   
+      
+          });
+      
+    });
+    
+    </script>  
+    
 <div id="mid" class="archive">
 
-<?php if ($wp_query->found_posts >8) {?>
-    <div class="coda-nav-left" id="coda-nav-left-1"><a href="#" title="Slide left"><img src="<?php bloginfo('template_directory'); ?>/images/left.png" alt="Left" /></a></div>
-	<div class="coda-nav-right" id="coda-nav-right-1"><a href="#" title="Slide right"><img src="<?php bloginfo('template_directory'); ?>/images/right.png" alt="Right" /></a></div>
-<?php }?>
-		
-		<!-- Start slider -->
-		<div class="coda-slider-wrapper">
-			<div class="coda-slider preload" id="coda-slider-1">
-			
-			<?php $c=0; ?>		
-            
-			 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<?php if ($c==0) : ?>
-				<div class="panel">
-				<?php endif; ?>
+
+
+<!-- Liquid Slider Panels -->
+      <div class="liquid-slider"  id="ls2">
+		<?php $c=0; ?>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<?php if ($c==0) : ?> <div class="panel"> <h2 class="title"></h2> <?php endif; ?>
 				
 				<div class="wrapper-archive">
 					<?php $image = get_post_meta($post->ID, 'archive_image', true); if ($image=="") { $image = get_post_meta($post->ID, 'lead_image', true); } ?>
@@ -40,31 +73,15 @@
 				<?php	} ?>
 						<div class="more-button">
 							<?php previous_posts_link('&laquo; Newer Results') ?>
+							<br/><br/>
 							<?php next_posts_link('Older Results &raquo;') ?>
 						</div> <!-- .more-button -->
                 </div> <!-- .panel -->
-                
+
 			<?php else : ?>
 		
-			<?php endif; ?>
-	
-			</div><!-- .coda-slider preload -->    
-		</div><!--.coda-slider-wrapper -->
-		
-
-                                <script type="text/javascript"> 
-        jQuery(document).ready(function($){
-                                $().ready(function() {
-                                        $('#coda-slider-1').codaSlider({
-											dynamicArrows: false,
-											dynamicTabs: true,
-											dynamicTabsPosition: "bottom",
-											});
-                                });
-        });
-                        </script> 
-
-
+			<?php endif; ?>   
+		</div><!--.ls2-wrapper -->
 </div><!-- .mid -->
 	
     <div id="archive-filter">
