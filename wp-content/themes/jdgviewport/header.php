@@ -39,4 +39,11 @@
 	<ul id="searchbox">
 		<li><?php include (TEMPLATEPATH . '/searchform.php'); ?></li>
 	</ul>
+
+
+
+
+
+
+
 </div> <!--#header -->
